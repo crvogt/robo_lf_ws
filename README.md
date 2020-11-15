@@ -20,9 +20,11 @@ End-effector calibration was completed using a laser attached to the camera affi
 ### PR2
 
 Calibration dataset:
+
 Light field dataset:
 
 ### Baxter
 
 Calibration dataset:
+
 Light field dataset:
