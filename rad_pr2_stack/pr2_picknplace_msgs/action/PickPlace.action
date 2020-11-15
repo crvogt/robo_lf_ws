@@ -1,0 +1,8 @@
+# Goal
+pr2_picknplace_msgs/PicknPlaceGoal goal
+---
+# Result
+bool success
+---
+# Feedback
+string feedback

@@ -1,0 +1,24 @@
+<launch>
+
+  <remap from="image_rect" to="/kinect2/qhd/image_color_rect"/>
+  <!-- <remap from="/kinect2/hd/camera_info" to="/kinect2/qhd/camera_info"/> -->
+
+  <node name="apriltag_detector"
+        pkg="apriltags_ros"
+        type="apriltag_detector_node"
+        output="screen">
+      <param name="image_transport" type="str" value="compressed"/>
+      <rosparam param="tag_descriptions"> [
+          {id: 469, size: 0.05, frame_id: 'banana'},
+          {id: 470, size: 0.05, frame_id: 'apple1'},
+          {id: 475, size: 0.05, frame_id: 'apple2'},
+          {id: 473, size: 0.05, frame_id: 'orange'},
+          {id: 472, size: 0.05, frame_id: 'bowl1'},
+          {id: 476, size: 0.05, frame_id: 'bowl2'}]
+      </rosparam>
+  </node>
+  <node name="pr2_cooking_demo_node" pkg="pr2_cooking_demo" type="pr2_cooking_demo_node" output="screen" clear_params="true">
+    <rosparam file="$(find pr2_cooking_demo)/cfg/cooking_config.yaml" command="load" />
+  </node>
+
+</launch>
